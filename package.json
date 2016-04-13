@@ -1,0 +1,19 @@
+{
+  "name": "self-destruct",
+  "version": "0.1.0",
+  "description": "Create a self destruct objects using Proxy",
+  "main": "self-destruct.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "self destruct",
+    "timeout objects",
+    "proxy"
+  ],
+  "author": "Amir Bashan <aabg21@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
