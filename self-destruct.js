@@ -17,11 +17,6 @@
   }
 
 
-  global.selfDestruct = selfDestruct;
-
-  selfDestruct.killers = {};
-
-
   function selfDestruct (obj) {
     obj = obj || {};
 
@@ -51,11 +46,34 @@
   }
 
 
-  selfDestruct.killers.killAfter = timeoutKiller;
+
   function timeoutKiller (proxy, time) {
     global.setTimeout(function() {
       proxy.revoke();
     }, time);
   }
 
-})(window);
+
+
+  selfDestruct.killers = {
+    'killAfter': timeoutKiller
+  };
+
+
+  /*--- EXPORT ---*/
+
+  (window || self || {}).selfDestruct = selfDestruct;
+
+  if (typeof(define) == 'function' && typeof(define.amd) == 'object' && define.amd) {
+    define(function() {
+      return selfDestruct;
+    });
+
+  } else if (module && module.exports) {
+    module.exports = selfDestruct;
+
+  } else {
+    global.selfDestruct = selfDestruct;
+  }
+
+})(this);
