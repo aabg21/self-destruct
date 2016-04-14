@@ -2,6 +2,11 @@
   "name": "self-destruct",
   "version": "0.1.0",
   "description": "Create a self destruct objects using Proxy",
+  "homepage": "http://github.com/aabg21/self-destruct",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aabg21/self-destruct.git"
+  },
   "main": "self-destruct.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
